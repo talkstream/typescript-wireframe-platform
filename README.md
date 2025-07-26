@@ -806,6 +806,30 @@ The framework is designed for multiple platforms:
 
 These MCP servers significantly accelerate development by enabling natural language interactions with your tools, reducing context switching, and automating repetitive tasks.
 
+## 📬 Queue Service
+
+Asynchronous task processing with support for Cloudflare Queues:
+
+- **Message Priority** - Process important messages first
+- **Delayed Messages** - Schedule for future delivery
+- **Dead Letter Queue** - Automatic failed message handling
+- **Batch Operations** - Efficient bulk processing
+- **Multiple Providers** - Cloudflare Queues, Memory (testing)
+
+```typescript
+// Send message to queue
+const queueService = QueueFactory.createAutoDetect();
+await queueService.send('orders', { orderId: '123', amount: 99.99 });
+
+// Process messages
+const consumer = queueService.consume('orders', async (message) => {
+  await processOrder(message.body);
+  // Message deleted automatically on success
+});
+```
+
+[Learn more about Queue Service →](docs/QUEUE_SERVICE.md)
+
 ## ⚡ Performance & Cloudflare Plans
 
 ### Understanding Cloudflare Workers Limits
