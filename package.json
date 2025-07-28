@@ -65,13 +65,13 @@
     "wrangler": "^4.5.0"
   },
   "dependencies": {
-    "@anthropic-ai/claude-code": "^1.0.60",
+    "@anthropic-ai/claude-code": "^1.0.61",
     "@google/generative-ai": "^0.24.1",
-    "@sentry/cloudflare": "^9.41.0",
+    "@sentry/cloudflare": "^9.42.0",
     "date-fns": "^4.1.0",
     "grammy": "^1.31.0",
-    "hono": "^4.6.21",
-    "zod": "^4.0.9"
+    "hono": "^4.8.9",
+    "zod": "^4.0.10"
   },
   "engines": {
     "node": ">=20.0.0",
